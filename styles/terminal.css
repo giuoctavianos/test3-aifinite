@@ -1,0 +1,92 @@
+.terminal-window {
+  background-color: rgba(13, 17, 23, 0.95);
+  border: 1px solid var(--terminal-green);
+  border-radius: 8px;
+  box-shadow: 0 0 20px var(--terminal-glow);
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: rgba(74, 246, 38, 0.1);
+  border-bottom: 1px solid var(--terminal-green);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between;
+}
+
+.terminal-title {
+  color: var(--terminal-green);
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--terminal-green);
+}
+
+.terminal-content {
+  margin-top: 40px;
+  line-height: 1.6;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.status-line {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.status-indicator {
+  color: var(--terminal-green);
+}
+
+.help-text {
+  color: var(--terminal-orange);
+  text-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.command-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.command-prompt {
+  color: var(--terminal-green);
+  user-select: none;
+}
