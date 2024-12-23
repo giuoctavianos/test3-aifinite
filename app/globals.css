@@ -9,114 +9,111 @@
   --terminal-glow: rgba(74, 246, 38, 0.4);
 }
 
-body {
-  background-color: var(--terminal-background);
-  color: var(--terminal-green);
-  font-family: 'JetBrains Mono', monospace;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: 0;
+/* Add layer for better optimization */
+@layer base {
+  body {
+    @apply min-h-screen m-0 p-8;
+    background-color: var(--terminal-background);
+    color: var(--terminal-green);
+    font-family: 'JetBrains Mono', monospace;
+  }
 }
 
-.terminal-window {
-  background-color: rgba(13, 17, 23, 0.95);
-  border: 1px solid var(--terminal-green);
-  border-radius: 8px;
-  box-shadow: 
-    0 0 20px var(--terminal-glow),
-    inset 0 0 10px rgba(74, 246, 38, 0.2);
-  padding: 2rem;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  min-height: 80vh;
-}
-
-.terminal-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: rgba(74, 246, 38, 0.1);
-  border-bottom: 1px solid var(--terminal-green);
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  justify-content: space-between;
-}
-
-.terminal-title {
-  color: var(--terminal-green);
-  font-size: 0.8rem;
-  margin: 0 auto;
-  text-shadow: 0 0 5px var(--terminal-glow);
-}
-
-.terminal-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.terminal-button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid var(--terminal-green);
-  box-shadow: 0 0 5px var(--terminal-glow);
-}
-
-.terminal-content {
-  margin-top: 40px;
-  line-height: 1.6;
-  padding-bottom: 2rem;
-}
-
-.blink {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-.status-line {
-  display: flex;
-  gap: 1rem;
-  margin: 0.5rem 0;
-  text-shadow: 0 0 2px var(--terminal-glow);
-}
-
-.status-indicator {
-  color: var(--terminal-green);
-}
-
-.help-text {
-  color: var(--terminal-orange);
-  text-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1; }
-}
-
-.command-line {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.command-prompt {
-  color: var(--terminal-green);
-  user-select: none;
-  text-shadow: 0 0 2px var(--terminal-glow);
-}
-
-input {
-  caret-color: var(--terminal-green);
+@layer components {
+  .terminal-window {
+    @apply w-full max-w-[900px] mx-auto relative overflow-hidden min-h-[80vh] p-8;
+    background-color: rgba(13, 17, 23, 0.95);
+    border: 1px solid var(--terminal-green);
+    border-radius: 8px;
+    box-shadow: 
+      0 0 20px var(--terminal-glow),
+      inset 0 0 10px rgba(74, 246, 38, 0.2);
+  }
+  
+  .terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: rgba(74, 246, 38, 0.1);
+    border-bottom: 1px solid var(--terminal-green);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+  
+  .terminal-title {
+    color: var(--terminal-green);
+    font-size: 0.8rem;
+    margin: 0 auto;
+    text-shadow: 0 0 5px var(--terminal-glow);
+  }
+  
+  .terminal-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--terminal-green);
+    box-shadow: 0 0 5px var(--terminal-glow);
+  }
+  
+  .terminal-content {
+    margin-top: 40px;
+    line-height: 1.6;
+    padding-bottom: 2rem;
+  }
+  
+  .blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  .status-line {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    text-shadow: 0 0 2px var(--terminal-glow);
+  }
+  
+  .status-indicator {
+    color: var(--terminal-green);
+  }
+  
+  .help-text {
+    color: var(--terminal-orange);
+    text-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+  
+  .command-line {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .command-prompt {
+    color: var(--terminal-green);
+    user-select: none;
+    text-shadow: 0 0 2px var(--terminal-glow);
+  }
+  
+  input {
+    caret-color: var(--terminal-green);
+  }
 }

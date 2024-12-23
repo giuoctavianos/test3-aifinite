@@ -1,37 +1,82 @@
-# AIFinite Capital Terminal
+# Test3-AIFinite Terminal
 
-A retro-style terminal interface for AIFinite Capital, built with Next.js and TypeScript.
+A modern terminal-style web application built with Next.js and Tailwind CSS.
 
-## Features
+## 🚀 Features
 
-- Interactive terminal interface
-- Real-time system status
-- Portfolio management commands
-- Market analysis tools
+- Terminal-like interface with modern design
+- Real-time command processing
+- Responsive UI with animations
+- TypeScript support
+- Optimized for performance
 
-## Development
+## 🛠️ Tech Stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- TypeScript
+- Radix UI Components
+
+## 📦 Quick Start
 
 ```bash
+# Clone repository
+git clone https://github.com/yourusername/test3-aifinite.git
+
 # Install dependencies
 npm install
 
 # Run development server
 npm run dev
+```
 
-# Build for production
+## 🔧 Available Commands
+
+```bash
+# Development
+npm run dev
+
+# Production build
 npm run build
 
 # Start production server
 npm start
+
+# Lint code
+npm run lint
 ```
 
-## Commands
+## 📁 Project Structure
 
-- `help` - Display available commands
-- `status` - Show system status
-- `portfolio` - View portfolio details
-- `clear` - Clear terminal screen
+```
+test3-aifinite/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   └── ui/
+├── public/
+└── styles/
+```
 
-## Deployment
+## 🚀 Deployment
 
-This project is configured for deployment on Vercel.
+This project is optimized for Vercel deployment:
+
+1. Push to GitHub
+2. Import to Vercel
+3. Deploy
+
+## 📄 License
+
+MIT License
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Open Pull Request
